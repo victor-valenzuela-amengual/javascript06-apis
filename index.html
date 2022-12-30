@@ -25,7 +25,7 @@
           <div class="col pesos">Pesos CLP</div>
                 
           <div class="col">
-            <input type="text" class="form-control" placeholder="Ingrese el monto en CLP" id="caja-pesos"/>
+            <input type="number" class="form-control" placeholder="Ingrese el monto en CLP" id="caja-pesos" step="1000" min="0"/>
           </div>                
           <div class="col moneda">Moneda a convertir</div>            
             <div class="col">
@@ -37,7 +37,7 @@
             <div class="d-grid col-12">
                 <button type="submit" class="btn btn-primary mb-3 mt-3" id="btn-filtro">Convertir
             </div>        
-            <div id="resultado"></div>            
+            <div id="resultado" class="resultado"></div>            
       </div>      
     </div>
     <div class="col-md-3 offset-md-3 graf mt-4">

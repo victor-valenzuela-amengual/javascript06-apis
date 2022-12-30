@@ -65,7 +65,8 @@ const EjecutarConversion = () => {
   let tipoCambio = parseFloat(RespuestaAPI[monedaSeleccionada].valor);
   
   let total =montoPesos /tipoCambio;  
-  resultado.innerHTML = `Resultado: ${new Intl.NumberFormat().format(total.toFixed(2))}`;
+  resultado.innerHTML = `Resultado: CLP ${new Intl.NumberFormat().format(montoPesos.toFixed(0))} = 
+  ${new Intl.NumberFormat().format(total.toFixed(2))} ${monedaSeleccionada}` ;
   GetSeries();
   MostrarGrafico();
 };

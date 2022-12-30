@@ -10,14 +10,14 @@ body {
   }
 }
 
-/* @media (max-width: 768px)  {
-    .graf {
-        height: 800px;
-    }
-    .estadistica {
-        height: 800px;
-    }
-  } */
+@media  (max-width: 576px)  {
+    .container {
+        width: 500px;
+      }
+      .container-int {
+        width: 400px;
+      }
+  }
 
 .container {
   margin-top: 50px;
@@ -30,7 +30,7 @@ body {
   margin-top: 20px;
 }
 
-mediq .titulo {
+.titulo {
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 0px;
@@ -52,6 +52,12 @@ mediq .titulo {
   margin-top: 10px;
 }
 
+.resultado {
+    font-size: 12px;
+    font-weight: bold;
+    
+  }
+
 .graf {
   width: 50%;
   text-align: center;
@@ -63,7 +69,7 @@ mediq .titulo {
 
   
   footer div{    
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     height: 10vh;    
