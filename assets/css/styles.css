@@ -15,6 +15,7 @@ body{
     margin-top: 50px;
     padding: 10px 70px 25px 70px;
     width: 600px;    
+    border: solid 2px burlywood
 }
 .container-int{
     background-color:gray;
@@ -36,6 +37,8 @@ body{
     border-top: solid 1px cadetblue;
     border-bottom: solid 1px cadetblue;
     margin-bottom: 5px;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .pesos{
