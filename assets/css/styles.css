@@ -1,55 +1,64 @@
-body{
-    background-color:#cad4f0;
+body {
+  background-color: #cad4f0;
 }
-.encab{
-    font-weight: bold;
-    border-top: solid 1px;    
-}
-
-.items{
-    border-top: solid 1px;
-    border-right: solid 1px;
-}
-
-.container{
-    margin-top: 50px;
-    padding: 10px 70px 25px 70px;
-    width: 600px;    
-    border: solid 2px burlywood
-}
-.container-int{
-    background-color:gray;
-    color: white;    
-    margin-top: 20px;        
+@media (min-width: 576px) {
+  .container {
+    width: 576px;
+  }
+  .container-int {
     width: 400px;
-    /* padding-right: 0px; */
-    /* padding-left: 0px; */
+  }
+}
+
+/* @media (max-width: 768px)  {
+    .graf {
+        height: 800px;
+    }
+    .estadistica {
+        height: 800px;
+    }
+  } */
+
+.container {
+  margin-top: 50px;
+  padding: 10px 70px 25px 70px;
+  border: solid 2px rgb(77, 76, 75);
+}
+.container-int {
+  background-color: gray;
+  color: white;
+  margin-top: 20px;
+}
+
+mediq .titulo {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.div-titulo {
+  border-top: solid 1px cadetblue;
+  border-bottom: solid 1px cadetblue;
+  margin-bottom: 5px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.pesos {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.moneda {
+  margin-top: 10px;
+}
+
+.graf {
+  width: 50%;
+  text-align: center;
+}
+
+footer {
+    margin-top: 20px;
     
-    
-}
-
-.titulo{
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 0px;
-}
-.div-titulo{
-    border-top: solid 1px cadetblue;
-    border-bottom: solid 1px cadetblue;
-    margin-bottom: 5px;
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.pesos{
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.moneda{
-    margin-top: 10px;
-}
-
-.graf{
-    width:50%;
-}
+    text-align: center;
+  }
