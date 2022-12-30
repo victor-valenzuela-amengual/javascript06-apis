@@ -1,0 +1,52 @@
+body{
+    background-color:#cad4f0;
+}
+.encab{
+    font-weight: bold;
+    border-top: solid 1px;    
+}
+
+.items{
+    border-top: solid 1px;
+    border-right: solid 1px;
+}
+
+.container{
+    margin-top: 50px;
+    padding: 10px 70px 25px 70px;
+    width: 600px;    
+}
+.container-int{
+    background-color:gray;
+    color: white;    
+    margin-top: 20px;        
+    width: 400px;
+    /* padding-right: 0px; */
+    /* padding-left: 0px; */
+    
+    
+}
+
+.titulo{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+.div-titulo{
+    border-top: solid 1px cadetblue;
+    border-bottom: solid 1px cadetblue;
+    margin-bottom: 5px;
+}
+
+.pesos{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.moneda{
+    margin-top: 10px;
+}
+
+.graf{
+    width:50%;
+}
