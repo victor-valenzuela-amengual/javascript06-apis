@@ -10,15 +10,14 @@ body {
   }
 }
 
-@media  (max-width: 576px)  {
-    .container {
-        width: 500px;
-      }
-      .container-int {
-        width: 400px;
-      }
+@media (max-width: 576px) {
+  .container {
+    width: 500px;
   }
-
+  .container-int {
+    width: 400px;
+  }    
+}
 .container {
   margin-top: 50px;
   padding: 10px 70px 25px 70px;
@@ -53,27 +52,31 @@ body {
 }
 
 .resultado {
-    font-size: 12px;
-    font-weight: bold;
-    
-  }
+  font-size: 12px;
+  font-weight: bold;
+}
 
 .graf {
   width: 50%;
   text-align: center;
 }
 
-  footer p {
-    margin-bottom: 0px;
-  } 
+footer p {
+  margin-bottom: 0px;
+}
 
-  
-  footer div{    
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    height: 10vh;    
-    text-align: center;
-    align-content: center;
-    background-color: skyblue; 
+footer div {
+  position: relative;
+  bottom: 0px;
+  width: 100%;
+  height: 10vh;
+  text-align: center;
+  align-content: center;
+  background-color: skyblue;
+}
+
+@media (max-width: 576px) {  
+  footer div {    
+    position:fixed;    
+  }
 }
