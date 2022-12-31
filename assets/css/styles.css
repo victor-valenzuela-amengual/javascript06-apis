@@ -20,7 +20,7 @@ body {
 }
 .container {
   margin-top: 50px;
-  padding: 10px 70px 25px 70px;
+  padding: 10px 30px 25px 30px;
   border: solid 2px rgb(77, 76, 75);
 }
 .container-int {
@@ -45,6 +45,10 @@ body {
 .pesos {
   font-size: 20px;
   font-weight: bold;
+}
+.pesos .form-check {
+  font-size: 12px;
+  font-weight: bold;  
 }
 
 .moneda {

@@ -11,49 +11,81 @@
       crossorigin="anonymous"
     />
     <link href="assets/css/styles.css" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/e0bb259c63.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/e0bb259c63.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="icon" href="assets/img/favicon-16x16.png" type="image/png" />
     <title>Convertir divisas</title>
   </head>
   <body>
     <div class="container bg-black text-white text-center">
-      <div class="div-titulo">
-        Conversor de moneda nacional
-        <!-- <p class="titulo">Conversor de moneda nacional</p> -->
-      </div>      
-      <div class="container container-int">        
-          <div class="col pesos">Pesos CLP</div>
-                
-          <div class="col">
-            <input type="number" class="form-control" placeholder="Ingrese el monto en CLP" id="caja-pesos" step="1000" min="0"/>
-          </div>                
-          <div class="col moneda">Moneda a convertir</div>            
-            <div class="col">
-                <select class="form-select" id="combo-monedas">
-                    
-                </select>
-            </div>                
-            
-            <div class="d-grid col-12">
-                <button type="submit" class="btn btn-primary mb-3 mt-3" id="btn-filtro">Convertir
-            </div>        
-            <div id="resultado" class="resultado"></div>            
-      </div>      
+      <div class="div-titulo">Conversor de moneda nacional</div>
+      <div class="container container-int">
+        <div class="col pesos">
+          <div class="form-check">
+            <div class="col-6">
+              <input class="form-check-input" type="radio" id="radioNac" checked="true">
+              <label class="form-check-label" for="radioNac">
+                CLP a seleccionada
+              </label>
+            </div>
+            <div class="col-6">
+              <input class="form-check-input" type="radio" id="radioInter">
+              <label class="form-check-label" for="radioInter">
+                Internacional a CLP
+              </label>
+            </div>                        
+          </div>
+        </div>
+        
+        <div class="col moneda">Moneda a convertir</div>
+        <div class="col">
+          <select class="form-select" id="combo-monedas"></select>
+        </div>
+        <div class="col pesos" id="etiq-moneda">CLP</div>
+        <div class="col">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Ingrese el monto a convertir"
+            id="caja-pesos"
+            step="1000"
+            min="0"
+          />
+        </div>
+        <div class="d-grid col-12">
+          <button
+            type="submit"
+            class="btn btn-primary mb-3 mt-3"
+            id="btn-filtro"
+          >
+            Convertir
+          </button>
+        </div>
+        <div id="resultado" class="resultado"></div>
+      </div>
     </div>
     <div class="col-md-3 offset-md-3 graf mt-4">
-        <canvas  id="estadistica"></canvas>
-    </div>    
+      <canvas id="estadistica"></canvas>
+    </div>
     <footer>
       <div>
-        <p>Desarrollado por VVA</p> 
-        <a href="mailto:vikotor@gmail.com"> <i class="fa-solid fa-envelope me-1"></i></a>
-        <a href="https://wa.me/56956286727" class="link-success"> <i class="fa-brands fa-square-whatsapp me-1"></i></a> 
-        <a href="tel:+56956286727" class="link-dark"> <i class="fa-solid fa-phone me-1"></i></a> 
+        <p>Desarrollado por VVA</p>
+        <a href="mailto:vikotor@gmail.com">
+          <i class="fa-solid fa-envelope me-1"></i
+        ></a>
+        <a href="https://wa.me/56956286727" class="link-success">
+          <i class="fa-brands fa-square-whatsapp me-1"></i
+        ></a>
+        <a href="tel:+56956286727" class="link-dark">
+          <i class="fa-solid fa-phone me-1"></i
+        ></a>
       </div>
     </footer>
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  
-      <script src="assets/js/monedas.js"></script>          
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/monedas.js"></script>
   </body>
 </html>

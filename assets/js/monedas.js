@@ -3,35 +3,38 @@ const cboMoneda = document.querySelector("#combo-monedas");
 const botonFiltro = document.querySelector("#btn-filtro");
 const resultado = document.querySelector("#resultado");
 const grafico = document.querySelector("#estadistica");
+const opcionNac = document.querySelector("#radioNac");
+const opcionInternac = document.querySelector("#radioInter");
+const etiqMoneda = document.querySelector("#etiq-moneda");
 
 let listaMonedas = [];
 let monedas = [];
 let RespuestaAPI = null;
 let graf = new Chart();
 
-const MostrarGrafico=()=>{
-    if(graf){graf.destroy();}
-    graf = new Chart(grafico, {
-        type: "line",
-        data: {
-          labels: [],
-          datasets: [
-            {
-              label: "# valor diario",
-              data: [],
-              borderWidth: 1,
-            },
-          ],
+const MostrarGrafico = () => {
+  if (graf) { graf.destroy(); }
+  graf = new Chart(grafico, {
+    type: "line",
+    data: {
+      labels: [],
+      datasets: [
+        {
+          label: "# valor diario",
+          data: [],
+          borderWidth: 1,
         },
-        options: {
-            plugins: {
-              title: {
-                display: true,
-                text: 'Variación moneda',
-              }
-            }
-          }
-      });
+      ],
+    },
+    options: {
+      plugins: {
+        title: {
+          display: true,
+          text: 'Variación moneda',
+        }
+      }
+    }
+  });
 }
 const ObtenerDatosApi = async () => {
   const req = await fetch("https://mindicador.cl/api");
@@ -59,14 +62,22 @@ const ListarMonedas = async () => {
   cboMoneda.innerHTML = html;
 };
 
-const EjecutarConversion = () => {
+const EjecutarConversion = () => {  
   let montoPesos = parseFloat(cajaPesos.value);
   let monedaSeleccionada = cboMoneda.value;
   let tipoCambio = parseFloat(RespuestaAPI[monedaSeleccionada].valor);
-  
-  let total =montoPesos /tipoCambio;  
-  resultado.innerHTML = `Resultado: CLP ${new Intl.NumberFormat().format(montoPesos.toFixed(0))} = 
-  ${new Intl.NumberFormat().format(total.toFixed(2))} ${monedaSeleccionada}` ;
+  let total = 0;
+  if (opcionNac.checked) {
+    total = montoPesos / tipoCambio;
+    resultado.innerHTML = `Resultado: ${etiqMoneda.innerHTML} ${new Intl.NumberFormat().format(montoPesos.toFixed(0))} = 
+  ${new Intl.NumberFormat().format(total.toFixed(2))} ${monedaSeleccionada}`;
+  }
+  else {
+    total = montoPesos * tipoCambio;
+    resultado.innerHTML = `Resultado:  ${new Intl.NumberFormat().format(montoPesos.toFixed(0))} ${etiqMoneda.innerHTML} = 
+  ${new Intl.NumberFormat().format(total.toFixed(2))} CLP`;
+  }
+
   GetSeries();
   MostrarGrafico();
 };
@@ -89,17 +100,34 @@ const GetSeries = async () => {
 
   etiqs.reverse();
   valores.reverse();
-  
+
   graf.data.labels = etiqs;
   graf.data.datasets[0].data = valores;
   graf.update();
 };
 
-const FormatNumber=()=>{  
-  let numero=cajaPesos.value;  
+const FormatNumber = () => {
+  let numero = cajaPesos.value;
   cajaPesos.value = new Intl.NumberFormat('de-DE').format(numero);
 }
+const AlternaCheckNac = () => {  
+  opcionInternac.checked = !opcionNac.checked;
+  etiqMoneda.innerHTML = 'CLP';
+}
+const AlternaCheckInter = () => {
+  opcionNac.checked = !opcionInternac.checked;
+  CambiarEqtiquetaPorMoneda();
+}
+const CambiarEqtiquetaPorMoneda = () => {  
+  
+  if (opcionInternac.checked)
+    etiqMoneda.innerHTML = cboMoneda.value;
+}
+
 ObtenerDatosApi();
 ListarMonedas();
 botonFiltro.addEventListener("click", EjecutarConversion);
+opcionInternac.addEventListener("click", AlternaCheckInter)
+opcionNac.addEventListener("click", AlternaCheckNac)
+cboMoneda.addEventListener("change", CambiarEqtiquetaPorMoneda)
 //cajaPesos.addEventListener("blur",FormatNumber);
